@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">ToDoApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="save_text">Kaydet</string>
+
+    <string-array name="priority_val">
+        <item name="priority_low">Yeşil</item>
+        <item name="priority_medium">Mavi</item>
+        <item name="priority_high">Kırmızı</item>
+    </string-array>
 </resources>
