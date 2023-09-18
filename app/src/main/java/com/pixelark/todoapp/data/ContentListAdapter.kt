@@ -2,8 +2,11 @@ package com.pixelark.todoapp.data
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
+import com.pixelark.todoapp.R
+import com.pixelark.todoapp.data.enum.TodoPriority
 import com.pixelark.todoapp.data.model.ContentDataModel
 import com.pixelark.todoapp.data.source.ContentDatabase
 import com.pixelark.todoapp.databinding.ContentItemBinding
@@ -13,6 +16,7 @@ class ContentListAdapter : RecyclerView.Adapter<ContentListAdapter.ContentListVi
     private val selectedItems: MutableList<ContentDataModel> = mutableListOf()
     private var isInEditMode: Boolean = false
     private val contentList = mutableListOf<ContentDataModel>()
+    // private val contentColors: MutableList<Int> = mutableListOf()
 
     class ContentListViewHolder(val binding: ContentItemBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -40,6 +44,15 @@ class ContentListAdapter : RecyclerView.Adapter<ContentListAdapter.ContentListVi
         }
         holder.binding.contentItemCbCheck.isChecked = data.isChecked
         holder.binding.contentItemCbCheck.isVisible = isInEditMode
+
+        holder.binding.tutorialItemCvCardView.setCardBackgroundColor(
+
+            when (data.priority) {
+                TodoPriority.LOW -> ContextCompat.getColor(holder.itemView.context, R.color.green)
+                TodoPriority.MEDIUM -> ContextCompat.getColor(holder.itemView.context, R.color.blue)
+                TodoPriority.HIGH -> ContextCompat.getColor(holder.itemView.context, R.color.red)
+            }
+        )
     }
 
     fun setEditMode(isInEditMode: Boolean) {

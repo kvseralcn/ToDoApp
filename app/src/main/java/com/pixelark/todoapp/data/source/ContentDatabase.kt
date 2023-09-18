@@ -1,5 +1,6 @@
 package com.pixelark.todoapp.data.source
 
+import com.pixelark.todoapp.data.enum.TodoPriority
 import com.pixelark.todoapp.data.model.ContentDataModel
 
 object ContentDatabase {
@@ -14,11 +15,16 @@ object ContentDatabase {
         this.contentList.addAll(contentList)
     }
 
-    fun addContent(title: String, description: String): ContentDataModel {
+    fun addContent(
+        title: String,
+        description: String,
+        priority: TodoPriority = TodoPriority.LOW
+    ): ContentDataModel {
         val newContent = ContentDataModel(
             id = (contentList.lastOrNull()?.id ?: 0) + 1,
             title = title,
-            description = description
+            description = description,
+            priority = priority
         )
         contentList.add(newContent)
         return newContent

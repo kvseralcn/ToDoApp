@@ -39,9 +39,11 @@
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:textStyle="bold"
+                    android:textColor="@color/text_color"
                     tools:text="Text 1" />
 
                 <TextView
+                    android:textColor="@color/text_color"
                     android:id="@+id/contentItem_tvDescription"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
