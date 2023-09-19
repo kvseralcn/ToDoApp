@@ -12,7 +12,7 @@ A simple to-do application. This app has been developed for the UP School Educat
 
 ## Tech
 
-- [Recylerview](https://developer.android.com/develop/ui/views/layout/recyclerview)
+- [RecyclerView](https://developer.android.com/develop/ui/views/layout/recyclerview)
 - [Jetpack Navigation](https://developer.android.com/guide/navigation/get-started)
 
 
